@@ -1,7 +1,15 @@
 <%# <h1> My name is <%= ['Sean', 'Mas'].sample <h1> %>
 
-<h1>My name is <%= @name %></h1>
+<%# <h1>My name is <%= @name</h1> %>
 
-<div style='border: 6px dashed yellow'>
+<% if @name %>
+<h1>My name is <%= @name %></h1>
+<% end %>
+<form action="/named-cat">
+  <input type="text" name="name">
+  <input type="submit" value="Enter">
+</form>
+
+<div style='border: 6px dashed blue'>
   <img src='https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg?resize=750px:*'>
 </div>
