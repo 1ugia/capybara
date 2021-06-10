@@ -14,14 +14,25 @@ get '/random-cat' do
   erb(:index)
 end
 
-get '/named-cat' do
-  p params # param == "query" passing info to the server
-  @name = params[:name] # :name is hash KEY
-  # params hash - allows you to use string on url
-  # allowing to put the prameter into the URL
+# get '/named-cat' do
+#   p params # param == "query" passing info to the server
+#   @name = params[:name] # :name is hash KEY
+#   # params hash - allows you to use string on url
+#   # allowing to put the prameter into the URL
+#   erb :index
+#   # putting the name in the URL instead
+#   # @color = params[:color]
+# end
+
+get '/cat-form' do
+  erb :cat_form
+end
+##if statement allows to pop name on if name is inputted
+post '/named-cat' do
+  p params
+  @name = params[:name]
   erb :index
-  # putting the name in the URL instead
-  # @color = params[:color]
 end
 
-##if statement allows to pop name on if name is inputted
+# GET transfer and keeps info in query string. 
+# POST still sends info but in secret and server will remember it
